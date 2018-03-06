@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Placeholder Name BR Game</title>
+</head>
+<body>
+    <button id="test_button" onclick="send()">Join Game</button>
+</body>
+<script type="text/javascript">
+    var hostname = window.location.hostname;
+    var port = window.location.port;
+
+    var socket = new WebSocket("ws://" + hostname + ":" + port + "/websocket");
+
+    function send() {
+        if (socket.readyState === WebSocket.OPEN) {
+            socket.send("HELLO WORLD");
+        }
+    }
+</script>
+</html>
