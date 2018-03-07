@@ -6,9 +6,11 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.handler.codec.http.websocketx.WebSocketFrame;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
-import io.placeholder.net.session.Session;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import io.placeholder.net.session.Session;
 
 public class WebSocketFrameHandler extends SimpleChannelInboundHandler<WebSocketFrame> {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebSocketFrameHandler.class);

@@ -1,17 +1,24 @@
 package io.placeholder.net;
 
-import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
+import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
+import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.codec.http.websocketx.extensions.compression.WebSocketServerCompressionHandler;
+import io.placeholder.ServerContext;
 
 
 public class ServerChannelInitializer extends ChannelInitializer<SocketChannel> {
 
     private static final String WEBSOCKET_ENDPOINT = "/websocket";
+
+    private ServerContext context;
+
+    public ServerChannelInitializer(ServerContext context) {
+        this.context = context;
+    }
 
     @Override
     protected void initChannel(SocketChannel ch) {
