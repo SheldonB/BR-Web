@@ -1,6 +1,7 @@
-group 'nettyTest'
-version '1.0-SNAPSHOT'
+group 'battle-royale'
+version '0.0.0'
 
+apply plugin: 'idea'
 apply plugin: 'java'
 apply plugin: 'application'
 
