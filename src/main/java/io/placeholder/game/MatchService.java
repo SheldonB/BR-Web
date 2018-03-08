@@ -1,10 +1,11 @@
 package io.placeholder.game;
 
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 import io.placeholder.ServerContext;
 import io.placeholder.game.model.Game;
 import io.placeholder.game.model.Player;
 
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * The {@link MatchService} is responsible for
@@ -38,6 +39,11 @@ public final class MatchService {
         createGameIfReady();
     }
 
+    /**
+     * Creates a new {@link Game} and passes
+     * it over to the {@link GameService} when
+     * ready.
+     */
     private void createGameIfReady() {
         if (playersInLobby.size() >= 10) {
             Game game = new Game();

@@ -26,5 +26,6 @@ public final class GameService {
 
     public void addGame(Game game) {
         currentGames.add(game);
+        game.start();
     }
 }
