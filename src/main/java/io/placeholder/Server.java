@@ -33,7 +33,6 @@ public class Server {
 
     private void init() throws Exception {
         initNetworking();
-        initGame();
     }
 
     private void initNetworking() throws Exception {
@@ -58,10 +57,6 @@ public class Server {
             bossGroup.shutdownGracefully();
             loopGroup.shutdownGracefully();
         }
-    }
-
-    private void initGame() {
-
     }
 
     public static void main(String... args) {
