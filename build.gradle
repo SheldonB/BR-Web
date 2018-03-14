@@ -39,4 +39,6 @@ task createJavaFlatBuffers(type: FlatBuffers) {
     language = 'java'
 }
 
+build.dependsOn(createJavaFlatBuffers)
+
 mainClassName = "io.placeholder.Server"
