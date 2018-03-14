@@ -6,5 +6,5 @@ import io.placeholder.net.session.Session;
 public final class NetworkConstants {
     NetworkConstants() { }
 
-    public static final AttributeKey<Session> SESSION_KEY = AttributeKey.valueOf("SESSION_KEY");
+    static final AttributeKey<Session> SESSION_KEY = AttributeKey.valueOf("SESSION_KEY");
 }

@@ -31,11 +31,12 @@ dependencies {
 
 flatbuffers {
     flatcPath = './bin/flatc'
-    language = 'java'
 }
 
-task createFlatBuffers(type: FlatBuffers) {
-    outputDir = file("src/generated/flatbuffers")
+task createJavaFlatBuffers(type: FlatBuffers) {
+    inputDir = file("src/main/flatbuffers")
+    outputDir = file("src/main/java")
+    language = 'java'
 }
 
 mainClassName = "io.placeholder.Server"

@@ -30,6 +30,7 @@ public class ServerChannelInitializer extends ChannelInitializer<SocketChannel> 
         pipeline.addLast(new WebSocketServerCompressionHandler());
         pipeline.addLast(new WebSocketServerProtocolHandler(WEBSOCKET_ENDPOINT,null, true));
         pipeline.addLast(new StaticPageHandler());
-        pipeline.addLast(new WebSocketFrameHandler(context));
+        pipeline.addLast(new WebSocketFrameDecoder(context));
+        pipeline.addLast(new GameMessageHandler());
     }
 }

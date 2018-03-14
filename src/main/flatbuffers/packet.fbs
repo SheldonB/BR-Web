@@ -1,0 +1,20 @@
+namespace io.placeholder.net.messages;
+
+table MoveActionPayload {
+    keypress: byte;
+}
+
+union Payload {
+    MoveActionPayload
+}
+
+table Message {
+    payload: Payload;
+}
+
+table Packet {
+    server_tick: uint;
+    messages: [Message];
+}
+
+root_type Packet;
